@@ -4,14 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./math.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Taller de matemáticas con JavaScript</h1>
-    <p>
-        Por favor, abre la consola del inspector de elementos
-    </p>
-    
+    <main>
+        <h1>Cálculos en cuadrado, triángulo y círculo</h1>
+        <section class="cuadrado-seccion">
+            <h2>Cuadrado</h2>
+            <figure>
+                <img src="./imágenes/pngegg (9).png" alt="cuadrado" class="cuadrado">
+            </figure>
+            <p>En esta sección podrás hallar el perímetro y área de un cuadrado</p>
+            <div class="inputs">
+                <div class="lado">
+                    <input type="number" placeholder="2" id="lado">
+                    <label for="lado">medida</label>
+                </div>
+                <div class="medida">
+                    <input type="text" placeholder="cm" id="unidad">
+                    <label for="unidad">Unidad</label>
+                </div>
+            </div>
+            <button>Calcular</button>
+        </section>
+        <section class="triangulo-seccion">
+            <h2>Triángulo</h2>
+            <figure>
+                <img src="./imágenes/pngegg (10).png" alt="triángulo" class="triangulo">
+            </figure>
+            <p>En esta sección podrás hallar perímetro, área y alturas de un triángulo, además de determinar si es un triángulo equilátero, isosceles o escaleno</p>
+            <div class="inputsTriangulo">
+                <div class="lado1">
+                    <input type="number" placeholder="2" id="lado1">
+                    <label for="lado1">Lado1</label>
+                </div>
+                <div class="lado2">
+                    <input type="number" placeholder="2" id="lado2">
+                    <label for="lado2">Lado2</label>
+                </div>
+                <div class="lado3">
+                    <input type="number" placeholder="2" id="lado3">
+                    <label for="lado3">Lado3</label>
+                </div>
+                <div class="unidad">
+                    <input type="text" placeholder="cm" id="unidadTriangulo">
+                    <label for="unidadTriangulo">unidad</label>
+                </div>
+            </div>
+            <button>Calcular</button>
+
+        </section>
+        <section class="circulo-seccion">
+            <h2>Círculo</h2>
+            <figure>
+                <img src="./imágenes/pngegg (11).png" alt="círculo" class="circulo">
+            </figure>
+            <p>En esta sección podrás ver el perímetro (circunferencia) y área de un círculo</p>
+            <div class="inputsCirculo">
+                <div class="radio">
+                    <input type="number" placeholder="2" id="radio">
+                    <label for="radio">medida</label>
+                </div>
+                <div class="unidadRadio">
+                    <input type="text" placeholder="cm" id="unidadRadio">
+                    <label for="unidadRadio">unidad</label>
+                </div>
+            </div>
+            <button>Calcular</button>
+        </section>
+    </main>
     <script src="./math.js"></script>
 </body>
 </html>

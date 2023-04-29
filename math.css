@@ -1,0 +1,68 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* cuadrado */
+
+.cuadrado-seccion {
+    display: grid;
+    text-align: center;
+    place-content: center;
+}
+.cuadrado-seccion img, .triangulo-seccion img, .circulo-seccion img {
+    width: 250px;
+}
+.cuadrado-seccion .inputs {
+    display: flex;
+    width: 300px;
+    margin-left: 18px;
+}
+.cuadrado-seccion .numero {
+    display: grid;
+}
+.cuadrado-seccion .unidad {
+    display: grid;
+}
+input::placeholder {
+    text-align: center;
+}
+button {
+    width: 300px;
+    justify-self: center;
+}
+
+/* triangulo */
+
+.triangulo-seccion {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+}
+.inputsTriangulo {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+}
+.inputsTriangulo div {
+    display: grid;
+}
+
+/* Círculo */
+
+.circulo-seccion {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+}
+.inputsCirculo {
+    display: flex;
+    justify-content: center;
+}
+.inputsCirculo div {
+    display: grid;    
+}
