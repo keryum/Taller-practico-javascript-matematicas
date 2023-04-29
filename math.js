@@ -19,19 +19,49 @@ console.group('Triangulo')
 function calculosTriangulo(lado1, lado2, lado3, unidad) {
     const perimetroTriangulo = (lado1 + lado2 + lado3);
     const S = perimetroTriangulo / 2;
-    const areaTriangulo = (Math.sqrt(S*(S-lado1)*(S-lado2)*(S-lado3)));
+    const areaTriangulo = (Math.sqrt(S*(S-lado1)*(S-lado2)*(S-lado3))).toFixed(3);
     const resultado = `El perímetro de un triángulo de lados ${lado1}${unidad}, ${lado2}${unidad} y ${lado3}${unidad} es ${perimetroTriangulo}${unidad} y el área es ${areaTriangulo}${unidad}^2`
     return {resultado}
 }
 
 console.groupEnd('Triangulo')
 
-// altura de triángulo isósceles
+// altura de triángulo
 
-function alturaTrianguloIsosceles (lado, base, unidad) {
-    const altura = Math.sqrt((Math.pow(lado, 2))-((Math.pow(base, 2))/4)).toFixed(3);
-    const resultado = `La altura de un triángulo de lado ${lado}${unidad} y base ${base}${unidad} es ${altura}${unidad}`
-    return {resultado}
+function datosTriangulo (lado1, lado2, lado3, unidad) {
+    const perimetro = lado1 + lado2 + lado3;
+    const S = perimetro / 2;
+    const area = (Math.sqrt(S*(S-lado1)*(S-lado2)*(S-lado3))).toFixed(3);
+    const isosceles = 'Este triángulo es isosceles'
+    const equilatero = 'Este triángulo es equilátero'
+    const escaleno = 'Este triángulo es escaleno'
+        if (lado1==lado2 && lado2==lado3)
+        return {
+            equilatero,
+            perimetro,
+            area,
+            altura1: ((area*2)/lado1).toFixed(3) + `${unidad}`,
+            altura2: ((area*2)/lado2).toFixed(3) + `${unidad}`,
+            altura3: ((area*2)/lado3).toFixed(3) + `${unidad}`,
+        }
+        else if ((lado1==lado2 && lado2!==lado3) || (lado2==lado3 && lado3!==lado1) || (lado1==lado3 && lado3!==lado2))
+        return {
+            isosceles,
+            perimetro,
+            area,
+            altura1: ((area*2)/lado1).toFixed(3) + `${unidad}`,
+            altura2: ((area*2)/lado2).toFixed(3) + `${unidad}`,
+            altura3: ((area*2)/lado3).toFixed(3) + `${unidad}`,
+        }
+        else if (lado1!==lado2 && lado2!==lado3) 
+        return {
+            escaleno,
+            perimetro,
+            area,
+            altura1: ((area*2)/lado1).toFixed(3) + `${unidad}`,
+            altura2: ((area*2)/lado2).toFixed(3) + `${unidad}`,
+            altura3: ((area*2)/lado3).toFixed(3) + `${unidad}`,
+        } 
 }
 
 // Círculo
