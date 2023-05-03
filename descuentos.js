@@ -32,6 +32,41 @@ const button = document.querySelector('#verificar-cupon')
 const result = document.querySelector('#result')
 
 button.addEventListener('click', canjearCupon)
+
+// const cuponesObj = {
+//     'Descuentito10': 10,
+//     'Descuentito20': 20,
+//     'Descuentito25': 25,
+//     'Descuentito50': 50,
+//     'Descuentito75': 75
+// };
+
+const cuponesList = []
+cuponesList.push ({
+    name: 'Descuentito10',
+    discount: 10,
+})
+cuponesList.push ({
+    name: 'Descuentito20',
+    discount: 20,
+})
+cuponesList.push ({
+    name: 'Descuentito30',
+    discount: 30,
+})
+cuponesList.push ({
+    name: 'Descuentito40',
+    discount: 40,
+})
+cuponesList.push ({
+    name: 'Descuentito50',
+    discount: 50,
+})
+cuponesList.push ({
+    name: 'Descuentito60',
+    discount: 60,
+})
+
 function canjearCupon() {
     const cupon = inputCupon.value;
     const price = inputPrice.value;
@@ -41,23 +76,44 @@ if (!price || !cupon) {
     return;
 }
 
-    let discount;
+let discount;
 
-    switch (cupon) {
-
-        case 'DesCuEnTiTo25': 
-        discount = 25;
-        break;
-
-        case 'DesCuEnTiTo50':
-        discount = 50;
-        break;
-
-        default:
-        result.innerText = `El cupón que ha ingresado es invalido`
-        return;
-        
+function filtro(cuponElement) {
+    if (cuponElement.name === cupon) {
+        return cuponElement;
     }
+}
+
+const cuponInArray = cuponesList.find(filtro);
+
+if (cuponInArray) {
+    discount = cuponInArray.discount;
+} else { 
+    result.innerText = `El cupón que ha ingresado es invalido`;
+    return;
+}
+
+// if (cuponesObj[cupon]) {
+//     discount = cuponesObj[cupon]
+// } else { 
+    // result.innerText = `El cupón que ha ingresado es invalido`;
+    // return;
+// }
+
+    // switch (cupon) {
+
+    //     case 'DesCuEnTiTo25': 
+    //     discount = 25;
+    //     break;
+
+    //     case 'DesCuEnTiTo50':
+    //     discount = 50;
+    //     break;
+
+    //     default:
+    //     result.innerText = `El cupón que ha ingresado es invalido`
+    //     return;
+    // }
 
     // if (cupon === 'DesCuEnTiTo25') {
     //     discount = 25
@@ -70,4 +126,6 @@ if (!price || !cupon) {
 
     const newPrice = (price * (100-discount))/100;
     result.innerText = `EL nuevo precio con descuento es $${newPrice}`
+
+    console.log(cuponInArray, newPrice)
 }
