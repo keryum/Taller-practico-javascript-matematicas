@@ -1,4 +1,3 @@
-console.log(NewMath)
 
 // Pais = [
     // PersonaIndividual = {
